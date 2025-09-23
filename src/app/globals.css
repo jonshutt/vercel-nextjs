@@ -59,9 +59,9 @@ a:hover {
     radial-gradient(circle at 20% 10%, rgba(94, 234, 212, 0.32), transparent 60%),
     radial-gradient(circle at 70% 30%, rgba(14, 165, 233, 0.28), transparent 60%),
     radial-gradient(circle at 42% 78%, rgba(129, 140, 248, 0.24), transparent 70%);
-  filter: blur(100px);
-  opacity: 0.55;
-  animation: auroraDrift 26s ease-in-out infinite alternate;
+  filter: blur(50px);
+  /* opacity: 0.55; */
+  animation: auroraDrift 5s ease-in-out infinite alternate;
 }
 
 .aurora-layer--alt {
@@ -70,9 +70,9 @@ a:hover {
     radial-gradient(circle at 28% 25%, rgba(125, 211, 252, 0.32), transparent 65%),
     radial-gradient(circle at 80% 70%, rgba(59, 130, 246, 0.26), transparent 68%),
     radial-gradient(circle at 45% 88%, rgba(45, 212, 191, 0.2), transparent 75%);
-  filter: blur(140px);
+  /* filter: blur(140px); */
   opacity: 0.48;
-  animation: auroraDriftAlt 32s ease-in-out infinite alternate;
+  animation: auroraDriftAlt 7s ease-in-out infinite alternate;
   mix-blend-mode: screen;
 }
 
@@ -88,19 +88,19 @@ a:hover {
 
 @keyframes auroraDrift {
   0% {
-    transform: translate3d(-4%, -3%, 0) scale(1.05);
+    transform: translate3d(-50%, -8%, 0) scale(1.05) rotate(-2deg);
   }
   100% {
-    transform: translate3d(4%, 3%, 0) scale(1.12);
+    transform: translate3d(50%, 8%, 0) scale(2.16) rotate(2deg);
   }
 }
 
 @keyframes auroraDriftAlt {
   0% {
-    transform: translate3d(3%, -4%, 0) scale(1.08) rotate(2deg);
+    transform: translate3d(68%, -10%, 0) scale(1.08) rotate(4deg);
   }
   100% {
-    transform: translate3d(-3%, 4%, 0) scale(1.14) rotate(-2deg);
+    transform: translate3d(-68%, 10%, 0) scale(1.18) rotate(-4deg);
   }
 }
 

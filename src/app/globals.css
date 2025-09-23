@@ -1,8 +1,8 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #131722;
+  --foreground: #e2e8f0;
 }
 
 @theme inline {
@@ -12,15 +12,103 @@
   --font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
+@media (prefers-color-scheme: light) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --background: #131722;
+    --foreground: #e2e8f0;
   }
 }
 
 body {
-  background: var(--background);
+  min-height: 100vh;
+  background-color: var(--background);
+  background-image:
+    radial-gradient(circle at 18% -10%, rgba(71, 184, 255, 0.06), transparent 55%),
+    radial-gradient(circle at 82% 8%, rgba(137, 149, 218, 0.05), transparent 55%),
+    radial-gradient(circle at 12% 78%, rgba(45, 212, 191, 0.04), transparent 60%);
+  background-attachment: fixed;
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-geist-sans), system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  line-height: 1.6;
+  color-scheme: dark;
+}
+
+a {
+  color: inherit;
+}
+
+a:hover {
+  color: inherit;
+}
+
+::selection {
+  background: rgba(56, 189, 248, 0.35);
+  color: #f8fafc;
+}
+
+.aurora-layer,
+.aurora-layer--alt,
+.tech-blueprint {
+  pointer-events: none;
+  position: absolute;
+}
+
+.aurora-layer {
+  inset: -30%;
+  background:
+    radial-gradient(circle at 20% 10%, rgba(94, 234, 212, 0.32), transparent 60%),
+    radial-gradient(circle at 70% 30%, rgba(14, 165, 233, 0.28), transparent 60%),
+    radial-gradient(circle at 42% 78%, rgba(129, 140, 248, 0.24), transparent 70%);
+  filter: blur(100px);
+  opacity: 0.55;
+  animation: auroraDrift 26s ease-in-out infinite alternate;
+}
+
+.aurora-layer--alt {
+  inset: -35%;
+  background:
+    radial-gradient(circle at 28% 25%, rgba(125, 211, 252, 0.32), transparent 65%),
+    radial-gradient(circle at 80% 70%, rgba(59, 130, 246, 0.26), transparent 68%),
+    radial-gradient(circle at 45% 88%, rgba(45, 212, 191, 0.2), transparent 75%);
+  filter: blur(140px);
+  opacity: 0.48;
+  animation: auroraDriftAlt 32s ease-in-out infinite alternate;
+  mix-blend-mode: screen;
+}
+
+.tech-blueprint {
+  inset: -5%;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 800 800' fill='none' stroke='rgba(148,163,184,0.14)' stroke-width='1'%3E%3Ccircle cx='400' cy='400' r='260'/%3E%3Ccircle cx='400' cy='400' r='140'/%3E%3Cpath d='M400 40v720M40 400h720M160 160l480 480M160 640l480-480'/%3E%3Cpath d='M220 400a180 180 0 00360 0 180 180 0 00-360 0z'/%3E%3C/svg%3E");
+  background-size: 640px;
+  background-repeat: repeat;
+  opacity: 0.42;
+  mix-blend-mode: screen;
+  animation: blueprintPan 60s linear infinite;
+}
+
+@keyframes auroraDrift {
+  0% {
+    transform: translate3d(-4%, -3%, 0) scale(1.05);
+  }
+  100% {
+    transform: translate3d(4%, 3%, 0) scale(1.12);
+  }
+}
+
+@keyframes auroraDriftAlt {
+  0% {
+    transform: translate3d(3%, -4%, 0) scale(1.08) rotate(2deg);
+  }
+  100% {
+    transform: translate3d(-3%, 4%, 0) scale(1.14) rotate(-2deg);
+  }
+}
+
+@keyframes blueprintPan {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  100% {
+    transform: translate3d(-10%, -6%, 0);
+  }
 }

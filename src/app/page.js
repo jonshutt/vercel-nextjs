@@ -32,6 +32,7 @@ export default function Home() {
         <h1 className="text-4xl font-semibold tracking-tight text-slate-100 sm:text-5xl">
           Hi, I&apos;m Jon Shutt. I build thoughtful digital products that balance polish with measurable impact.
         </h1>
+        <p>this is a test feature</p>
         <p className="max-w-2xl text-lg text-slate-400">
           From concept to deployment, I help teams ship user experiences that feel effortless and performant. My work spans
           product strategy, front-end architecture, and collaborative delivery with design and data partners.

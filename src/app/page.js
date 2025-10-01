@@ -1,6 +1,10 @@
+import { getPosts } from '@/actions/projects';
+
 const environmentLabel = process.env.NEXT_PUBLIC_ENVIRONMENT_LABEL;
 
-export default function Home() {
+export default async function Home() {
+  const posts = await getPosts();
+
   return (
     <section className="space-y-16">
       <div className="space-y-6">
@@ -13,6 +17,40 @@ export default function Home() {
         <p className="text-sm font-medium uppercase tracking-wide text-cyan-200/70">
           Environment: {environmentLabel}
         </p>
+      </div>
+
+      <div className="space-y-8">
+        <header className="space-y-2">
+          <h2 className="text-2xl font-semibold text-slate-100">Latest Posts</h2>
+          <p className="text-sm text-slate-400">
+            Thinking, writing, and notes from projects in progress.
+          </p>
+        </header>
+
+        {posts.length === 0 ? (
+          <p className="text-sm text-slate-400">No posts have been published yet.</p>
+        ) : (
+          <div className="space-y-6">
+            {posts.map((post) => (
+              <article
+                key={post.id}
+                className="rounded-3xl border border-white/10 bg-slate-900/40 p-6 shadow-lg shadow-cyan-500/10 transition hover:border-cyan-300/60 hover:bg-slate-900/60"
+              >
+                <h3 className="text-xl font-semibold text-slate-100">{post.title}</h3>
+                {post.summary ? (
+                  <p className="mt-3 text-sm text-slate-400">{post.summary}</p>
+                ) : null}
+                <p className="mt-3 text-xs uppercase tracking-wide text-slate-500">
+                  Updated {new Date(post.updatedAt).toLocaleDateString(undefined, {
+                    year: 'numeric',
+                    month: 'short',
+                    day: 'numeric',
+                  })}
+                </p>
+              </article>
+            ))}
+          </div>
+        )}
       </div>
     </section>
   );

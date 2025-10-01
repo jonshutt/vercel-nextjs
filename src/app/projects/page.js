@@ -1,4 +1,4 @@
-import { getProjects } from './actions';
+import { getProjects } from '@/actions/projects';
 
 export const metadata = {
   title: 'Projects | Jon Shutt',

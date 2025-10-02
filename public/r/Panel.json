@@ -7,7 +7,7 @@
   "files": [
     {
       "path": "src/components/ui/panel.tsx",
-      "content": "import * as React from \"react\";\n\nimport { cn } from \"@/lib/utils\";\n\nconst panelBaseClasses = \"rounded-3xl border border-white/10 bg-slate-900/40 p-8 shadow-xl shadow-cyan-500 transition hover:border-cyan-300/60 hover:bg-slate-900/60\";\n\nconst Panel = React.forwardRef<HTMLDivElement, React.HTMLAttributes<HTMLDivElement>>(({ className, ...props }, ref) => {\n  return (\n    <div ref={ref} className={cn(panelBaseClasses, className)} {...props} />\n  );\n});\n\nPanel.displayName = \"Panel\";\n\nexport { Panel };\n",
+      "content": "import * as React from \"react\";\n\nimport { cn } from \"@/lib/utils\";\nimport { Button } from \"./button\";\n\nconst panelBaseClasses = \"rounded-3xl border border-white/10 bg-slate-900/40 p-8 shadow-xl shadow-cyan-500 transition hover:border-cyan-300/60 hover:bg-slate-900/60\";\n\nconst Panel = React.forwardRef<HTMLDivElement, React.HTMLAttributes<HTMLDivElement>>(({ className, ...props }, ref) => {\n  \n  const {children, ...others } = props\n  return (\n    <div ref={ref} className={cn(panelBaseClasses, className)} {...others} >{children}\n    \n    ---\n    \n    </div>\n  );\n});\n\nPanel.displayName = \"Panel\";\n\nexport { Panel };\n",
       "type": "registry:ui"
     }
   ]

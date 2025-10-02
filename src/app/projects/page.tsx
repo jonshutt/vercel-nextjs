@@ -1,3 +1,4 @@
+import { Panel } from "@/components/ui/panel";
 import { getProjects } from "@/actions/projects";
 import type { Metadata } from "next";
 
@@ -24,13 +25,10 @@ export default async function ProjectsPage() {
       ) : (
         <div className="space-y-8">
           {projects.map((project) => (
-            <article
-              key={project.id}
-              className="rounded-3xl border border-white/10 bg-slate-900/40 p-8 shadow-xl shadow-cyan-500/10 transition hover:border-cyan-300/60 hover:bg-slate-900/60"
-            >
+            <Panel key={project.id}>
               <h2 className="text-2xl font-semibold text-slate-100">{project.name}</h2>
               <p className="mt-4 text-sm text-slate-400">{project.description}</p>
-            </article>
+            </Panel>
           ))}
         </div>
       )}

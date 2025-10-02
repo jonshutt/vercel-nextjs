@@ -1,3 +1,4 @@
+import { Panel } from "@/components/ui/panel";
 import { getPosts } from "@/actions/projects";
 
 const environmentLabel = process.env.NEXT_PUBLIC_ENVIRONMENT_LABEL ?? "Production";
@@ -32,10 +33,7 @@ export default async function Home() {
         ) : (
           <div className="space-y-6">
             {posts.map((post) => (
-              <article
-                key={post.id}
-                className="rounded-3xl border border-white/10 bg-slate-900/40 p-6 shadow-lg shadow-cyan-500/10 transition hover:border-cyan-300/60 hover:bg-slate-900/60"
-              >
+              <Panel key={post.id} className="p-6 shadow-lg">
                 <h3 className="text-xl font-semibold text-slate-100">{post.title}</h3>
                 {post.summary ? (
                   <p className="mt-3 text-sm text-slate-400">{post.summary}</p>
@@ -47,7 +45,7 @@ export default async function Home() {
                     day: 'numeric',
                   })}
                 </p>
-              </article>
+              </Panel>
             ))}
           </div>
         )}

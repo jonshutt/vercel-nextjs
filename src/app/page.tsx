@@ -1,6 +1,6 @@
-import { getPosts } from '@/actions/projects';
+import { getPosts } from "@/actions/projects";
 
-const environmentLabel = process.env.NEXT_PUBLIC_ENVIRONMENT_LABEL;
+const environmentLabel = process.env.NEXT_PUBLIC_ENVIRONMENT_LABEL ?? "Production";
 
 export default async function Home() {
   const posts = await getPosts();

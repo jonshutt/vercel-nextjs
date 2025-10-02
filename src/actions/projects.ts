@@ -1,10 +1,17 @@
 'use server';
 
-import prisma from '@/lib/prisma';
+import prisma from "@/lib/prisma";
 
-export async function getProjects() {
+export type ProjectSummary = {
+  id: number;
+  name: string;
+  description: string;
+  createdAt: Date;
+};
+
+export async function getProjects(): Promise<ProjectSummary[]> {
   const projects = await prisma.project.findMany({
-    orderBy: { createdAt: 'desc' },
+    orderBy: { createdAt: "desc" },
     select: {
       id: true,
       name: true,
@@ -12,12 +19,20 @@ export async function getProjects() {
       createdAt: true,
     },
   });
+
   return projects;
 }
 
-export async function getPosts() {
+export type PostSummary = {
+  id: number;
+  title: string;
+  summary: string | null;
+  updatedAt: Date;
+};
+
+export async function getPosts(): Promise<PostSummary[]> {
   const posts = await prisma.post.findMany({
-    orderBy: { updated_at: 'desc' },
+    orderBy: { updated_at: "desc" },
     select: {
       id: true,
       title: true,

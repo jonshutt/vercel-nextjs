@@ -1,5 +1,8 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import { Geist, Geist_Mono } from "next/font/google";
+import type { ReactNode } from "react";
+
 import "./globals.css";
 
 const geistSans = Geist({
@@ -12,18 +15,19 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-const navigation = [
+const navigation: ReadonlyArray<{ href: string; label: string }> = [
   { href: "/", label: "Home" },
   { href: "/projects", label: "Projects" },
+  { href: "/tasks", label: "Tasks" },
   { href: "/about", label: "About" },
 ];
 
-export const metadata = {
+export const metadata: Metadata = {
   title: "Jon Shutt | Portfolio",
   description: "Personal portfolio showcasing selected web projects and experience.",
 };
 
-export default function RootLayout({ children }) {
+export default function RootLayout({ children }: Readonly<{ children: ReactNode }>) {
   const year = new Date().getFullYear();
 
   return (

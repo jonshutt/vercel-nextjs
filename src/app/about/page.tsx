@@ -1,4 +1,6 @@
-export const metadata = {
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
   title: "About | Jon Shutt",
   description: "Learn about Jon Shutt's background, values, and how he approaches product engineering.",
 };

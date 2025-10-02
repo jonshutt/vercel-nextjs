@@ -1,8 +1,9 @@
-import { getProjects } from '@/actions/projects';
+import { getProjects } from "@/actions/projects";
+import type { Metadata } from "next";
 
-export const metadata = {
-  title: 'Projects | Jon Shutt',
-  description: 'Selected product work and collaborations led by Jon Shutt.',
+export const metadata: Metadata = {
+  title: "Projects | Jon Shutt",
+  description: "Selected product work and collaborations led by Jon Shutt.",
 };
 
 export default async function ProjectsPage() {

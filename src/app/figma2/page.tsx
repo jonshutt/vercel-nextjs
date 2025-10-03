@@ -85,7 +85,7 @@ export default function Figma2Page() {
         </h2>
         <div className="space-y-6 max-w-4xl">
           <p className="font-inter font-normal text-[#6526ad] text-sm leading-relaxed">
-            In the ever-evolving landscape of digital innovation, we stand at the forefront of transformative design thinking. Our approach combines cutting-edge technology with human-centered principles, creating solutions that not only meet today's challenges but anticipate tomorrow's opportunities. Through meticulous research and creative exploration, we craft experiences that resonate deeply with users while driving measurable business results.
+            In the ever-evolving landscape of digital innovation, we stand at the forefront of transformative design thinking. Our approach combines cutting-edge technology with human-centered principles, creating solutions that not only meet today&apos;s challenges but anticipate tomorrow&apos;s opportunities. Through meticulous research and creative exploration, we craft experiences that resonate deeply with users while driving measurable business results.
           </p>
           
           <p className="font-inter font-normal text-[#6526ad] text-sm leading-relaxed">

@@ -5,6 +5,9 @@
   "items": [
     {
       "name": "Panel",
+      "meta": {
+        "version": 1
+      },
       "type": "registry:ui",
       "title": "Panel",
       "description": "This is a panel we use to wrap list items",

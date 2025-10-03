@@ -19,6 +19,8 @@ const navigation: ReadonlyArray<{ href: string; label: string }> = [
   { href: "/", label: "Home" },
   { href: "/projects", label: "Projects" },
   { href: "/tasks", label: "Tasks" },
+  { href: "/figma", label: "Figma" },
+  { href: "/figma2", label: "Figma2" },
   { href: "/about", label: "About" },
 ];
 
